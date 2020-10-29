@@ -135,7 +135,7 @@ func buildArgs(tar string, files fileList) []string {
 			args = append(args, v)
 		}
 	}
-	args = append(args, "-cf")
+	args = append(args, "-czf")
 	args = append(args, getRealPath(tar))
 	args = append(args, files.Source...)
 
@@ -214,7 +214,7 @@ func (p *Plugin) buildArgs(target string) []string {
 
 	args = append(args,
 		p.Config.TarExec,
-		"-xf",
+		"-xzf",
 		p.DestFile,
 	)
 
